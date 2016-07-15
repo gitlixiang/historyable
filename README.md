@@ -81,6 +81,30 @@ u.first_name_history
           "changed_at" => Tue, 20 Aug 2013 16:20:00 UTC +00:00
         }
       ]
+      
+u.last_name = 'Bryant'
+u.save
+u.last_name_history
+# => [
+        {
+          "attribute_value" => "Bryant",
+          "changed_at" => Thu, 14 Jul 2016 16:20:00 UTC +00:00
+        }
+      ]
+      
+u.history_changes
+#it shows all changes of u
+# => [
+        { 
+          object_attribute: "first_name", object_attribute_value: "Philippe", created_at: "2013-08-20 16:20:00"
+        }, 
+        { 
+          object_attribute: "first_name", object_attribute_value: "Jean-Philippe", created_at: "2013-08-20 16:20:00"
+        },
+        { 
+          object_attribute: "last_name", object_attribute_value: "Bryant", created_at: "2016-07-14 16:20:00"
+        }
+     ]
 ```
 
 ## Known shortcomings
