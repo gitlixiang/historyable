@@ -22,7 +22,7 @@ module Historyable
     def has_history(*attributes)
       self.historyable_items = attributes.map do |attribute|
         attribute_name   = attribute.to_sym
-        association_name = "#{attribute}_changes".to_sym
+        association_name = "history_changes".to_sym
 
         Item.new(attribute_name, association_name)
       end
